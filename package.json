@@ -1,0 +1,26 @@
+{
+    "name": "translation-tool",
+    "version": "2.1.1",
+    "description": "A simple and practical translation tool",
+    "main": "./bin/translate.js",
+    "bin": {
+        "fanyi": "./bin/translate",
+        "translate": "./bin/translate"
+    },
+    "scripts": {
+        "fanyi": "node translate.js",
+        "translate": "node translate.js"
+    },
+    "keywords": [
+        "translation",
+        "fanyi",
+        "翻译",
+        "tool"
+    ],
+    "author": "wangkang",
+    "license": "ISC",
+    "dependencies": {
+        "colors": "^1.1.2",
+        "request": "^2.76.0"
+    }
+}

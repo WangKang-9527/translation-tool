@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var colors = require('colors');
+
+function format(str) {
+
+    // 翻译
+    var obj = JSON.parse(str)
+    var translation = obj.translation ? obj.translation : obj['translation '];
+    var translation = translation.join('；');
+    console.log('\n翻译'.red.bold + '：\n\n' + '    ' + translation.yellow + '\n');
+    var basic = obj.basic ? obj.basic : obj['basic '];
+    if (basic) {
+        var explains = basic.explains ? basic.explains : basic['explains ']; // array
+        for (var i = 0; i < explains.length; i++) {
+            if (explains[i].match(' ')) {
+                var explainArr = explains[i].split(' ');
+                console.log('    ' + explainArr[0].italic.green + ' ' + explainArr[1].yellow + '\n');
+            } else {
+                console.log('    ' + explains[0].yellow + '\n');
+            }
+        }
+    }
+
+    // 网络释义
+    var web = obj.web ? obj.web : obj['web ']; // array
+    if (web) {
+        console.log('\n网络释义'.red.bold + '：\n\n');
+        for (var i = 0; i < web.length; i++) {
+            var value = web[i].value ? web[i].value : web[i]['value '];
+            var webTranslate = value.join('，');
+            var key = web[i].key;
+            console.log('    ' + (i + 1) + '.' + ' ' + value + '；\n\n');
+            console.log('    ' + '——'.green + ' ' + key + '\n\n')
+        }
+    }
+
+}
+module.exports = format;
