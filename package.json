@@ -1,6 +1,6 @@
 {
     "name": "translation-tool",
-    "version": "2.1.1",
+    "version": "2.2.2",
     "description": "A simple and practical translation tool",
     "main": "./bin/translate.js",
     "bin": {
@@ -22,5 +22,14 @@
     "dependencies": {
         "colors": "^1.1.2",
         "request": "^2.76.0"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Godlovekang/translation-tool.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Godlovekang/translation-tool/issues"
+    },
+    "homepage": "https://github.com/Godlovekang/translation-tool#readme"
 }

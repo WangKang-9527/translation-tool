@@ -4,7 +4,7 @@ var request = require('request');
 var format = require('./format');
 var lineArr = process.argv;
 var wordArr = lineArr.slice(2, lineArr.length);
-var word = wordArr.join('+');
+var word = encodeURI(wordArr.join('+'));
 
 
 request('http://fanyi.youdao.com/openapi.do?keyfrom=translation-tool&key=1730699468&type=data&doctype=json&version=1.1&q=' + word, function(error, response, body) {
